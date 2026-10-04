@@ -7,13 +7,15 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 
 def generate_pdf():
     pdf_path = os.path.join(os.path.dirname(__file__), "Srikanth_K_V_Resume.pdf")
+    
+    # Strictly 1-page margins
     doc = SimpleDocTemplate(
         pdf_path,
         pagesize=letter,
-        rightMargin=0.5 * inch,
-        leftMargin=0.5 * inch,
-        topMargin=0.4 * inch,
-        bottomMargin=0.4 * inch
+        rightMargin=0.35 * inch,
+        leftMargin=0.35 * inch,
+        topMargin=0.3 * inch,
+        bottomMargin=0.3 * inch
     )
 
     styles = getSampleStyleSheet()
@@ -22,93 +24,89 @@ def generate_pdf():
         'NameTitle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=20,
-        leading=24,
-        textColor=HexColor('#111827'),
+        fontSize=18,
+        leading=21,
+        textColor=HexColor('#0f172a'),
         alignment=1, # Center
-        spaceAfter=3
+        spaceAfter=2
     )
 
     contact_style = ParagraphStyle(
         'ContactLine',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9,
-        leading=13,
-        textColor=HexColor('#374151'),
+        fontSize=8.5,
+        leading=11.5,
+        textColor=HexColor('#334155'),
         alignment=1, # Center
-        spaceAfter=6
+        spaceAfter=4
     )
 
     section_heading_style = ParagraphStyle(
         'SectionHeading',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=11,
-        leading=14,
-        textColor=HexColor('#111827'),
-        spaceBefore=7,
-        spaceAfter=3
+        fontSize=9.5,
+        leading=12,
+        textColor=HexColor('#0f172a'),
+        spaceBefore=4,
+        spaceAfter=2
     )
 
     body_style = ParagraphStyle(
         'BodyTextCustom',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9.5,
-        leading=13.5,
-        textColor=HexColor('#1f2937'),
-        spaceAfter=4
+        fontSize=8.5,
+        leading=11.5,
+        textColor=HexColor('#1e293b'),
+        spaceAfter=2
     )
 
     bullet_style = ParagraphStyle(
         'BulletCustom',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9,
-        leading=13,
-        textColor=HexColor('#1f2937'),
-        spaceAfter=2
+        fontSize=8.2,
+        leading=11,
+        textColor=HexColor('#1e293b'),
+        spaceAfter=1
     )
 
     item_header_style = ParagraphStyle(
         'ItemHeader',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=10,
-        leading=13,
-        textColor=HexColor('#111827')
+        fontSize=8.8,
+        leading=11.5,
+        textColor=HexColor('#0f172a')
     )
 
     story = []
 
     # Name & Contact Header
     story.append(Paragraph("<b>SRIKANTH K V</b>", title_style))
-    story.append(Paragraph("Bengaluru, Karnataka &nbsp;|&nbsp; Phone: +91-8197316916 &nbsp;|&nbsp; Email: kanthcomic@gmail.com<br/>GitHub: github.com/Kanth69 &nbsp;|&nbsp; LinkedIn: linkedin.com/in/srikanth-reddy-1a006425a", contact_style))
+    story.append(Paragraph("Bengaluru, Karnataka &nbsp;|&nbsp; +91-8197316916 &nbsp;|&nbsp; kanthcomic@gmail.com &nbsp;|&nbsp; github.com/Kanth69 &nbsp;|&nbsp; linkedin.com/in/srikanth-reddy-1a006425a", contact_style))
 
-    # HR line
-    story.append(HRFlowable(width="100%", thickness=1, color=HexColor('#111827'), spaceAfter=5, spaceBefore=2))
+    # Divider line
+    story.append(HRFlowable(width="100%", thickness=1, color=HexColor('#0f172a'), spaceAfter=4, spaceBefore=1))
 
     # Career Objective
     story.append(Paragraph("CAREER OBJECTIVE", section_heading_style))
     story.append(Paragraph("Software Developer and Data Analyst with hands-on experience in backend development, database management, and data analysis. Skilled in building web applications, developing REST APIs, working with relational databases, and analyzing business data. Seeking a Software Development Engineer role to build scalable applications and contribute to impactful software solutions.", body_style))
 
-    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#d1d5db'), spaceAfter=3, spaceBefore=3))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#cbd5e1'), spaceAfter=2, spaceBefore=2))
 
     # Technical Skills
     story.append(Paragraph("TECHNICAL SKILLS", section_heading_style))
     skills_text = """
-    <b>Programming Languages:</b> C++, C, JavaScript (Basics), PHP, Python (Basics)<br/>
-    <b>Web Technologies:</b> HTML, CSS, JavaScript, PHP<br/>
-    <b>Backend:</b> PHP, Laravel, REST APIs<br/>
-    <b>Databases:</b> PostgreSQL, MySQL, SQL<br/>
-    <b>Data Analysis:</b> SQL, Tableau, Redash<br/>
-    <b>Tools:</b> Git, GitHub, VS Code, XAMPP, MySQL Workbench<br/>
-    <b>CS Fundamentals:</b> OOPs, DBMS, Operating Systems, Data Structures & Algorithms
+    <b>Programming Languages:</b> C++, C, JavaScript (Basics), PHP, Python (Basics) &nbsp;|&nbsp; <b>Web Tech:</b> HTML, CSS, JavaScript, PHP<br/>
+    <b>Backend:</b> PHP, Laravel, REST APIs &nbsp;|&nbsp; <b>Databases:</b> PostgreSQL, MySQL, SQL &nbsp;|&nbsp; <b>Data Analysis:</b> SQL, Tableau, Redash<br/>
+    <b>Tools:</b> Git, GitHub, VS Code, XAMPP, MySQL Workbench &nbsp;|&nbsp; <b>CS Fundamentals:</b> OOPs, DBMS, Operating Systems, Data Structures & Algorithms
     """
     story.append(Paragraph(skills_text, body_style))
 
-    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#d1d5db'), spaceAfter=3, spaceBefore=3))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#cbd5e1'), spaceAfter=2, spaceBefore=2))
 
     # Experience
     story.append(Paragraph("EXPERIENCE", section_heading_style))
@@ -125,7 +123,7 @@ def generate_pdf():
     for b in bullets_exp:
         story.append(Paragraph(f"&bull;&nbsp; {b}", bullet_style))
 
-    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#d1d5db'), spaceAfter=3, spaceBefore=3))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#cbd5e1'), spaceAfter=2, spaceBefore=2))
 
     # Projects
     story.append(Paragraph("PROJECTS", section_heading_style))
@@ -142,7 +140,7 @@ def generate_pdf():
     for b in p1:
         story.append(Paragraph(f"&bull;&nbsp; {b}", bullet_style))
 
-    story.append(Spacer(1, 3))
+    story.append(Spacer(1, 2))
 
     # CineBook
     story.append(Paragraph("<b>CineBook &mdash; Online Movie Ticket Booking System</b>", item_header_style))
@@ -156,7 +154,7 @@ def generate_pdf():
     for b in p2:
         story.append(Paragraph(f"&bull;&nbsp; {b}", bullet_style))
 
-    story.append(Spacer(1, 3))
+    story.append(Spacer(1, 2))
 
     # College Predictor
     story.append(Paragraph("<b>College Prediction System &mdash; Machine Learning Project</b>", item_header_style))
@@ -170,22 +168,21 @@ def generate_pdf():
     for b in p3:
         story.append(Paragraph(f"&bull;&nbsp; {b}", bullet_style))
 
-    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#d1d5db'), spaceAfter=3, spaceBefore=3))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#cbd5e1'), spaceAfter=2, spaceBefore=2))
 
     # Education
     story.append(Paragraph("EDUCATION", section_heading_style))
-    story.append(Paragraph("<b>B.Tech in Information Science and Engineering</b> (2022 &ndash; 2026)<br/>University Visvesvaraya College of Engineering (UVCE), Bengaluru &nbsp;|&nbsp; <b>CGPA: 8.6 / 10</b>", body_style))
-    story.append(Paragraph("<b>Class 12 (Varadadri PU College)</b> &nbsp;&mdash;&nbsp; 2022 &nbsp;|&nbsp; <b>96.00%</b>", body_style))
-    story.append(Paragraph("<b>Class 10 (Adarsha Vidyalaya)</b> &nbsp;&mdash;&nbsp; 2020 &nbsp;|&nbsp; <b>96.64%</b>", body_style))
+    story.append(Paragraph("<b>B.Tech in Information Science and Engineering</b> (2022 &ndash; 2026) &nbsp;|&nbsp; <b>CGPA: 8.6 / 10</b><br/>University Visvesvaraya College of Engineering (UVCE), Bengaluru", body_style))
+    story.append(Paragraph("<b>Class 12 (Varadadri PU College)</b> &nbsp;&mdash;&nbsp; 2022 &nbsp;|&nbsp; <b>96.00%</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Class 10 (Adarsha Vidyalaya)</b> &nbsp;&mdash;&nbsp; 2020 &nbsp;|&nbsp; <b>96.64%</b>", body_style))
 
-    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#d1d5db'), spaceAfter=3, spaceBefore=3))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=HexColor('#cbd5e1'), spaceAfter=2, spaceBefore=2))
 
     # Hobbies
     story.append(Paragraph("HOBBIES", section_heading_style))
     story.append(Paragraph("Playing Cricket &nbsp;&bull;&nbsp; Watching Movies", body_style))
 
     doc.build(story)
-    print(f"Successfully generated PDF at {pdf_path}")
+    print(f"Successfully generated 1-page PDF at {pdf_path}")
 
 if __name__ == "__main__":
     generate_pdf()
