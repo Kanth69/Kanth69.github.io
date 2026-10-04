@@ -172,12 +172,13 @@ document.addEventListener('DOMContentLoaded', () => {
           case 'help':
             resultLine.innerHTML = `
               <p>Available commands:</p>
-              <p>  <strong class="text-emerald">info</strong>       - Overview of Srikanth K V</p>
-              <p>  <strong class="text-emerald">projects</strong>   - List engineering projects</p>
-              <p>  <strong class="text-emerald">skills</strong>     - Show technical stack</p>
-              <p>  <strong class="text-emerald">education</strong>  - View UVCE credentials</p>
-              <p>  <strong class="text-emerald">contact</strong>    - Email & social handles</p>
-              <p>  <strong class="text-emerald">clear</strong>      - Clear output history</p>
+              <p>  <strong class="text-emerald">info</strong>         - Overview & Objective of Srikanth K V</p>
+              <p>  <strong class="text-emerald">experience</strong>   - Nivasa Finance Intern details</p>
+              <p>  <strong class="text-emerald">projects</strong>     - List engineering projects</p>
+              <p>  <strong class="text-emerald">skills</strong>       - Show technical stack & CS fundamentals</p>
+              <p>  <strong class="text-emerald">education</strong>    - View UVCE, PUC & SSLC scores</p>
+              <p>  <strong class="text-emerald">contact</strong>      - Email & Phone contact handles</p>
+              <p>  <strong class="text-emerald">clear</strong>        - Clear output history</p>
             `;
             break;
 
@@ -185,44 +186,57 @@ document.addEventListener('DOMContentLoaded', () => {
           case 'whoami':
           case 'srikanth':
             resultLine.innerHTML = `
-              <p>✨ <strong>Srikanth K V</strong> — Software Developer</p>
+              <p>👨‍💻 <strong>Srikanth K V</strong> — Software Developer & Data Analyst</p>
               <p>📍 Location: Bengaluru, Karnataka, India</p>
-              <p>🎓 Education: UVCE B.Tech in ISE (8.73 CGPA)</p>
-              <p>💼 Focus: Backend systems, REST APIs, Databases, Web Apps</p>
+              <p>🎓 Education: UVCE B.Tech in ISE (8.6 CGPA)</p>
+              <p>💼 Focus: Backend Logic (PHP/Laravel/Spring Boot), Databases (PostgreSQL/MySQL), REST APIs, Data Analytics (SQL/Tableau/Redash)</p>
+            `;
+            break;
+
+          case 'experience':
+          case 'nivasa':
+            resultLine.innerHTML = `
+              <p>💼 <strong>Nivasa Finance, Bengaluru</strong> (May 2026 – Present)</p>
+              <p>Role: Software Developer & Data Analyst Intern</p>
+              <p>• Backend development with PHP & PostgreSQL for Navigator Platform.</p>
+              <p>• Built REST APIs, application logic, CRM workflows & database queries.</p>
+              <p>• Business intelligence reporting with SQL, Redash, and Tableau.</p>
             `;
             break;
 
           case 'projects':
             resultLine.innerHTML = `
-              <p>🚀 1. <strong>ShopCalm</strong> [Laravel, PHP, MySQL, REST API]</p>
-              <p>🎥 2. <strong>CINEBOOK</strong> [Java/PHP, MySQL, JavaScript]</p>
-              <p>📊 3. <strong>College Predictor</strong> [Python, Random Forest ML]</p>
+              <p>🛒 1. <strong>ShopCalm</strong> [Laravel, PHP, MySQL, Bootstrap] - E-Commerce Platform</p>
+              <p>🎟️ 2. <strong>CineBook</strong> [PHP, MySQL, HTML/CSS/JS] - Movie Ticket Booking</p>
+              <p>🤖 3. <strong>College Prediction System</strong> [Python, Flask, Random Forest, Scikit-learn, Pandas] - ML App</p>
             `;
             break;
 
           case 'skills':
           case 'stack':
             resultLine.innerHTML = `
-              <p>⚡ Languages: Java, C++, C, Python, JavaScript</p>
-              <p>🛠️ Backend: Spring Boot, Laravel, PHP, REST APIs</p>
-              <p>🗄️ Databases: MySQL, PostgreSQL, MariaDB, SQL</p>
-              <p>🔧 Tools: Git, GitHub, Linux, AWS, Nginx</p>
+              <p>⚡ Languages: C++, C, JavaScript (Basics), PHP, Python (Basics)</p>
+              <p>🛠️ Backend & Web: Laravel, Spring Boot, REST APIs, PHP, HTML/CSS/JS, Bootstrap</p>
+              <p>🗄️ Databases: PostgreSQL, MySQL, SQL</p>
+              <p>📊 Data Analytics: SQL, Tableau, Redash</p>
+              <p>🔧 Tools: Git, GitHub, VS Code, XAMPP, MySQL Workbench</p>
+              <p>📚 CS Fundamentals: OOPs, DBMS, Operating Systems, Data Structures & Algorithms</p>
             `;
             break;
 
           case 'education':
             resultLine.innerHTML = `
-              <p>🎓 B.Tech — Information Science & Engineering</p>
-              <p>🏫 University Visvesvaraya College of Engineering (UVCE)</p>
-              <p>🌟 CGPA: 8.73 / 10</p>
+              <p>🎓 <strong>B.Tech ISE</strong> — UVCE Bengaluru (2022–2026) | CGPA: 8.6</p>
+              <p>🏫 <strong>Class 12 (PUC)</strong> — Varadadri PU College (2022) | 96.00%</p>
+              <p>🏫 <strong>Class 10 (SSLC)</strong> — Adarsha Vidyalaya (2020) | 96.64%</p>
             `;
             break;
 
           case 'contact':
             resultLine.innerHTML = `
-              <p>✉️ Email: srikanthkv.dev@gmail.com</p>
+              <p>✉️ Email: kanthcomic@gmail.com</p>
+              <p>📞 Phone: +91-8197316916</p>
               <p>🐙 GitHub: github.com/Kanth69</p>
-              <p>💼 LinkedIn: linkedin.com/in/srikanth-kv</p>
             `;
             break;
 

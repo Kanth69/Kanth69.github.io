@@ -618,7 +618,7 @@ img, svg {
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--text-secondary);
 }
@@ -660,6 +660,7 @@ img, svg {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .socials-label {
@@ -672,6 +673,7 @@ img, svg {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .social-btn {
@@ -793,7 +795,7 @@ img, svg {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   line-height: 1.65;
-  min-height: 290px;
+  min-height: 310px;
 }
 
 .terminal-pane {
@@ -1112,15 +1114,14 @@ img, svg {
 .dot-ajax { background: #818cf8; }
 .dot-mysql { background: #38bdf8; }
 .dot-postgres { background: #60a5fa; }
-.dot-mariadb { background: #f472b6; }
 .dot-sql { background: #a7f3d0; }
 .dot-git { background: #fb923c; }
 .dot-github { background: #e5e7eb; }
+.dot-vscode { background: #38bdf8; }
+.dot-xampp { background: #fbbf24; }
 .dot-linux { background: #facc15; }
-.dot-aws { background: #fbbf24; }
-.dot-nginx { background: #4ade80; }
-.dot-redash { background: #f472b6; }
 .dot-tableau { background: #60a5fa; }
+.dot-redash { background: #f472b6; }
 
 /* --------------------------------------------------------------------------
    10. EXPERIENCE TIMELINE SECTION
@@ -1506,13 +1507,19 @@ img, svg {
 }
 
 /* --------------------------------------------------------------------------
-   12. EDUCATION SECTION
+   12. EDUCATION SECTION & SCHOOLING GRID
    -------------------------------------------------------------------------- */
+.education-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .education-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
-  padding: 2.5rem;
+  padding: 2.25rem;
   box-shadow: var(--shadow-card);
 }
 
@@ -1520,8 +1527,8 @@ img, svg {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.75rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border-subtle);
   flex-wrap: wrap;
 }
@@ -1554,16 +1561,19 @@ img, svg {
   color: var(--text-primary);
 }
 
-.edu-branch {
-  font-size: 1.05rem;
-  font-weight: 600;
+.edu-college {
+  font-size: 0.95rem;
   color: var(--accent-cyan);
-  margin-bottom: 0.25rem;
+  font-weight: 500;
+  margin-top: 0.2rem;
 }
 
-.edu-college {
-  font-size: 0.9375rem;
-  color: var(--text-secondary);
+.edu-year {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  display: inline-block;
+  margin-top: 0.25rem;
 }
 
 .edu-score-badge {
@@ -1586,7 +1596,7 @@ img, svg {
 }
 
 .score-value {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--accent-emerald);
 }
@@ -1611,6 +1621,58 @@ img, svg {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   color: var(--text-secondary);
+}
+
+/* Schooling Grid (PUC & 10th) */
+.schooling-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.school-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all var(--transition-fast);
+}
+
+.school-card:hover {
+  border-color: var(--border-accent);
+}
+
+.school-info h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.school-name {
+  font-size: 0.875rem;
+  color: var(--accent-cyan);
+}
+
+.school-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.school-score {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+}
+
+.score-num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent-emerald);
 }
 
 /* --------------------------------------------------------------------------
@@ -2113,6 +2175,7 @@ img, svg {
   .hero-title { font-size: 2.5rem; }
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
+  .schooling-grid { grid-template-columns: 1fr; }
   .about-highlights { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .contact-box { padding: 2rem 1.5rem; }
@@ -2123,7 +2186,7 @@ img, svg {
 
 @media (max-width: 480px) {
   .hero-title { font-size: 2.1rem; }
-  .hero-subtitle { font-size: 1.2rem; }
+  .hero-subtitle { font-size: 1.15rem; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
   .hero-socials { flex-direction: column; align-items: flex-start; }
   .edu-header { flex-direction: column; align-items: flex-start; }
