@@ -1,6 +1,6 @@
 /* ==========================================================================
    SRIKANTH K V — SOFTWARE DEVELOPER PORTFOLIO JAVASCRIPT
-   Vanilla JavaScript (ES6+), Zero Frameworks
+   Vanilla JavaScript (ES6+), Zero Frameworks, Touch & Mobile Optimized
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
 
   const handleHeaderScroll = () => {
-    if (window.scrollY > 40) {
+    if (window.scrollY > 30) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Active section observer
   const sectionObserverOptions = {
     root: null,
-    rootMargin: '-20% 0px -60% 0px',
+    rootMargin: '-20% 0px -55% 0px',
     threshold: 0
   };
 
@@ -58,17 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
   const openDrawer = () => {
+    if (!mobileDrawer) return;
     mobileDrawer.classList.add('open');
     mobileDrawer.setAttribute('aria-hidden', 'false');
-    mobileToggle.setAttribute('aria-expanded', 'true');
+    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
   };
 
   const closeDrawer = () => {
+    if (!mobileDrawer) return;
     mobileDrawer.classList.remove('open');
     mobileDrawer.setAttribute('aria-hidden', 'true');
-    mobileToggle.setAttribute('aria-expanded', 'false');
+    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   };
 
   if (mobileToggle) mobileToggle.addEventListener('click', openDrawer);
@@ -76,17 +80,28 @@ document.addEventListener('DOMContentLoaded', () => {
   if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
 
   mobileNavLinks.forEach(link => {
-    link.addEventListener('click', closeDrawer);
+    link.addEventListener('click', () => {
+      closeDrawer();
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      }
+    });
   });
 
   // --------------------------------------------------------------------------
   // 3. SCROLL REVEAL ANIMATIONS
   // --------------------------------------------------------------------------
   const revealElements = document.querySelectorAll('.reveal');
-
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (prefersReducedMotion) {
+  if (prefersReducedMotion || window.innerWidth < 480) {
+    // Show instantly on small mobile or reduced motion for top speed & responsiveness
     revealElements.forEach(el => el.classList.add('active'));
   } else {
     const revealObserver = new IntersectionObserver((entries) => {
@@ -97,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       root: null,
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px -40px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
@@ -284,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
   };
 
   const closeModal = (modal) => {
@@ -291,6 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   };
 
   if (resumeModalBtn) resumeModalBtn.addEventListener('click', () => openModal(resumeModal));
