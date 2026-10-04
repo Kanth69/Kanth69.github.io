@@ -342,6 +342,20 @@ img, svg {
   border: 1px solid var(--border-subtle);
 }
 
+.tech-featured {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.badge-featured {
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  background: rgba(56, 189, 248, 0.1) !important;
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
 /* --------------------------------------------------------------------------
    6. STICKY NAVIGATION
    -------------------------------------------------------------------------- */
@@ -1099,19 +1113,16 @@ img, svg {
   border-radius: 50%;
 }
 
-.dot-java { background: #f87171; }
 .dot-cpp { background: #60a5fa; }
 .dot-c { background: #93c5fd; }
 .dot-python { background: #facc15; }
 .dot-js { background: #fde047; }
-.dot-spring { background: #4ade80; }
 .dot-php { background: #a78bfa; }
 .dot-laravel { background: #f87171; }
 .dot-api { background: #38bdf8; }
 .dot-html { background: #fb923c; }
 .dot-css { background: #38bdf8; }
 .dot-bootstrap { background: #c084fc; }
-.dot-ajax { background: #818cf8; }
 .dot-mysql { background: #38bdf8; }
 .dot-postgres { background: #60a5fa; }
 .dot-sql { background: #a7f3d0; }
@@ -2089,7 +2100,7 @@ img, svg {
 
 /* Toast Container */
 .toast-container {
-  position: fixed;
+  position fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 3000;

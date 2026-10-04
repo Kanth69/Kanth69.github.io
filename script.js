@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <p>  <strong class="text-emerald">projects</strong>     - List engineering projects</p>
               <p>  <strong class="text-emerald">skills</strong>       - Show technical stack & CS fundamentals</p>
               <p>  <strong class="text-emerald">education</strong>    - View UVCE, PUC & SSLC scores</p>
-              <p>  <strong class="text-emerald">contact</strong>      - Email & Phone contact handles</p>
+              <p>  <strong class="text-emerald">contact</strong>      - Email, Phone & LinkedIn handle</p>
               <p>  <strong class="text-emerald">clear</strong>        - Clear output history</p>
             `;
             break;
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <p>👨‍💻 <strong>Srikanth K V</strong> — Software Developer & Data Analyst</p>
               <p>📍 Location: Bengaluru, Karnataka, India</p>
               <p>🎓 Education: UVCE B.Tech in ISE (8.6 CGPA)</p>
-              <p>💼 Focus: Backend Logic (PHP/Laravel/Spring Boot), Databases (PostgreSQL/MySQL), REST APIs, Data Analytics (SQL/Tableau/Redash)</p>
+              <p>💼 Primary Tech: PHP, Laravel, PostgreSQL, MySQL, REST APIs, SQL, Tableau, Redash</p>
             `;
             break;
 
@@ -198,9 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
             resultLine.innerHTML = `
               <p>💼 <strong>Nivasa Finance, Bengaluru</strong> (May 2026 – Present)</p>
               <p>Role: Software Developer & Data Analyst Intern</p>
-              <p>• Backend development with PHP & PostgreSQL for Navigator Platform.</p>
-              <p>• Built REST APIs, application logic, CRM workflows & database queries.</p>
-              <p>• Business intelligence reporting with SQL, Redash, and Tableau.</p>
+              <p>• Worked on backend development using PHP and PostgreSQL for Navigator Platform.</p>
+              <p>• Built REST APIs, database logic, CRM workflows & application processes.</p>
+              <p>• Business intelligence & reporting with SQL, Redash, and Tableau.</p>
             `;
             break;
 
@@ -208,16 +208,16 @@ document.addEventListener('DOMContentLoaded', () => {
             resultLine.innerHTML = `
               <p>🛒 1. <strong>ShopCalm</strong> [Laravel, PHP, MySQL, Bootstrap] - E-Commerce Platform</p>
               <p>🎟️ 2. <strong>CineBook</strong> [PHP, MySQL, HTML/CSS/JS] - Movie Ticket Booking</p>
-              <p>🤖 3. <strong>College Prediction System</strong> [Python, Flask, Random Forest, Scikit-learn, Pandas] - ML App</p>
+              <p>🤖 3. <strong>College Prediction System</strong> [Python, Flask, Random Forest, Scikit-learn, Pandas] - ML Project</p>
             `;
             break;
 
           case 'skills':
           case 'stack':
             resultLine.innerHTML = `
-              <p>⚡ Languages: C++, C, JavaScript (Basics), PHP, Python (Basics)</p>
-              <p>🛠️ Backend & Web: Laravel, Spring Boot, REST APIs, PHP, HTML/CSS/JS, Bootstrap</p>
-              <p>🗄️ Databases: PostgreSQL, MySQL, SQL</p>
+              <p>⚡ Primary Stack: PHP, Laravel, REST APIs, PostgreSQL, MySQL</p>
+              <p>💻 Languages: C++, C, JavaScript (Basics), PHP, Python (Basics)</p>
+              <p>🌐 Web Tech: HTML, CSS, JavaScript, PHP, Bootstrap</p>
               <p>📊 Data Analytics: SQL, Tableau, Redash</p>
               <p>🔧 Tools: Git, GitHub, VS Code, XAMPP, MySQL Workbench</p>
               <p>📚 CS Fundamentals: OOPs, DBMS, Operating Systems, Data Structures & Algorithms</p>
@@ -233,9 +233,11 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
 
           case 'contact':
+          case 'linkedin':
             resultLine.innerHTML = `
               <p>✉️ Email: kanthcomic@gmail.com</p>
               <p>📞 Phone: +91-8197316916</p>
+              <p>💼 LinkedIn: linkedin.com/in/srikanth-reddy-1a006425a</p>
               <p>🐙 GitHub: github.com/Kanth69</p>
             `;
             break;
